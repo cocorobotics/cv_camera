@@ -2,7 +2,7 @@
 
     <!-- Camera driver - IP is stored in /greengrass/v2/work/driveu.teleop.coco/layouts/V4L2_4_640x480_cams_1440x672_to_1152x672/cameras.yaml -->
     <node name="camera" pkg="cv_camera" type="cv_camera_node" output="screen" respawn="true">
-        <param name="device_path" value="rtspsrc location=rtsp://192.168.8.54:554/user=admin&amp;password=&amp;channel=1&amp;stream=1.sdp ! rtph264depay ! nvv4l2decoder enable-max-performance=true ! nvvidconv flip-method=1 ! video/x-raw(memory:NVMM),width=(int)256,height=(int)256 ! videoconvert ! video/x-raw,format=BGR ! appsink max-buffers=1 drop=true"/>
+        <param name="device_path" value="rtspsrc location=rtsp://192.168.8.54:554/user=admin&amp;password=&amp;channel=1&amp;stream=1.sdp ! rtph264depay ! nvv4l2decoder enable-max-performance=true ! nvvidconv flip-method=1 ! video/x-raw(memory:NVMM),format=(string)RGBA ! appsink max-buffers=1 drop=true"/>
         <param name="rate" value="10"/>
     </node>
 
