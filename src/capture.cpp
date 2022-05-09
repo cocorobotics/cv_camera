@@ -134,7 +134,7 @@ bool Capture::capture()
   {
     ros::Time stamp = ros::Time::now() - capture_delay_;
     
-    bridge_.encoding = enc:RGBA8; //bridge_.image.channels() == 3 ? enc::BGR8 : enc::MONO8;
+    bridge_.encoding = enc::RGBA8; //bridge_.image.channels() == 3 ? enc::BGR8 : enc::MONO8;
     bridge_.header.stamp = stamp;
     bridge_.header.frame_id = frame_id_;
 
